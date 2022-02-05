@@ -6,7 +6,7 @@ pincel.fillRect(0,0,1000,600);*/
 
 function desenhaBase() {
     pincel.fillStyle = 'rgb(212, 139, 56)';
-    pincel.fillRect(50,550,400,15);
+    pincel.fillRect(0,550,350,15);
     pincel.fillStyle = 'rgb(212, 139, 56)';
     pincel.beginPath();
     pincel.moveTo(100,500);
@@ -73,5 +73,5 @@ function desenhaPernaD() {
 
 function tracinhos(x) {
     pincel.fillStyle = 'black';
-    pincel.fillRect(400+(60*x),500,40,5);
+    pincel.fillRect(380+(60*x),500,40,5);
 }
