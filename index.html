@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div style="text-align:center; margin: 25px 0px;">
+    <div class="inicio"> 
       <h1 class="titulo">Jogo da Forca</h1>
       <button class="btn" id="iniciar-jogo">INICIAR JOGO</button>
     </div>
-    <div style="text-align:center">
+    <div class="texto">
       <input class="text-input" type="text" id="input-nova-palavra" placeholder="Escreva uma nova palavra">
       <button class="btn" id="nova-palavra">ADICIONAR PALAVRA</button> 
     </div>
-    <div style="text-align:center;">
-      <canvas id="forca" width="1200px" height="600px">
-        <div onload="" class="" id="palavra-sorteada">
-        </div>
-      </canvas>
+    <div class="jogo">
+      <canvas id="forca" width="400px" height="600px"></canvas>
+      <div class="palavras" id="palavra-certa"></div>
+      <div class="palavras" id="palavra-errada"></div>
+    </div>
+    <div>
+      <button class="btn" id="reiniciar-jogo">REINICIAR</button>
     </div>
     <script type="text/javascript" src="canvas.js"></script>
     <script type="text/javascript" src="forca.js"></script>
+    <footer></footer>
   </body>
 </html>

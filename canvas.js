@@ -1,8 +1,8 @@
 var desenho = document.querySelector ('#forca');
 var pincel = desenho.getContext('2d');
 
-/*pincel.fillStyle = '';
-pincel.fillRect(0,0,1000,600);*/
+pincel.fillStyle = 'lightgrey';
+pincel.fillRect(0,0,400,600);
 
 function desenhaBase() {
     pincel.fillStyle = 'rgb(212, 139, 56)';
@@ -14,19 +14,36 @@ function desenhaBase() {
     pincel.lineTo(150,550);
     pincel.fill();
 }
-desenhaBase();
+function desenhaForca() {
+    pincel.fillStyle = 'rgb(134, 75, 7)';
+    pincel.fillRect(95,150,10,355);
+    pincel.fillStyle = 'rgb(134, 75, 7)';
+    pincel.fillRect(95,150,258,10);
+    pincel.lineWidth = 10.0;
+    pincel.strokeStyle = 'rgb(134, 75, 7)';
+    pincel.beginPath();
+    pincel.moveTo(195,150);
+    pincel.lineTo(95,280);
+    pincel.stroke()
 
-function desenhaForcaA() {
-    pincel.fillStyle = 'rgb(134, 75, 7)';
-    pincel.fillRect(95,150,10,355);    
 }
-function desenhaForcaB() {
-    pincel.fillStyle = 'rgb(134, 75, 7)';
-    pincel.fillRect(95,150,258,10);    
+//aciona ao clicar iniciar jogo
+function desenhaInicio() {
+    desenhaBase();
+    desenhaForca();
 }
+desenhaInicio();
 function desenhaCorda() {
     pincel.fillStyle = 'rgb(233, 79, 18)';
-    pincel.fillRect(343,150,5,70);    
+    pincel.fillRect(343,150,5,70);
+    pincel.fillStyle = 'rgb(233, 79, 18)';
+    pincel.beginPath();
+    pincel.arc(345,240,20,0,2*3.14);
+    pincel.fill();
+    pincel.fillStyle = 'lightgrey';
+    pincel.beginPath();
+    pincel.arc(345,241,17,0,2*3.14);
+    pincel.fill();
 }
 function desenhaCabeca() {
     pincel.fillStyle = 'darkblue';
@@ -71,7 +88,9 @@ function desenhaPernaD() {
     pincel.stroke()
 }
 
+/*pincel.fillStyle = 'lightblue';
+pincel.fillRect(0,0,1100,50);
 function tracinhos(x) {
     pincel.fillStyle = 'black';
-    pincel.fillRect(380+(60*x),500,40,5);
-}
+    pincel.fillRect(400+(50*x),5,35,5);
+}*/

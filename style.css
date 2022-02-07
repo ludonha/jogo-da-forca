@@ -1,29 +1,44 @@
 
 .titulo {
-  padding: 10px;
   width: 30vw;
-  margin: auto;
-
 }
-
 .btn {
   border: 0;
   color: white;
   font-weight: bold;
   background-color: blue;
   padding: 10px;
-  margin-top: 7px;
-  margin-bottom: 5px;
+  margin: 5px;
   border-radius: 0.5em;
 }
-
 .text-input {
   border-radius: 0.5em;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  display: block;
+  display: flex;
+  flex-direction: row;
   padding: 0.5em;
+  margin-bottom: 2px;
   width: 30%;
   height: 25px;
-  margin-left: auto;
-  margin-right: auto;
+}
+#forca {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+#palavra-certa {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  height: 70px;
+  left: 428px;
+  top: 744px;
+  position: absolute;
+  background-color: lightgray;
+}
+.valor {
+  border-bottom: 5px solid black;
+  margin-right: 5px;
+  width: 45px;
+  height: 70px;
 }

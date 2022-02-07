@@ -1,8 +1,9 @@
 var iniciar = document.getElementById("iniciar-jogo");
 
 iniciar.addEventListener('click', function() {
-    sorteiaPalavra();
-    desenhaTracinhos();
+    //sorteiaPalavra();
+    //adicionaHtml();
+
 });
 
 var adicionarNovaPalavra = document.getElementById("nova-palavra");
@@ -13,32 +14,36 @@ adicionarNovaPalavra.addEventListener("click",function () {
     novoTexto.value = "";
 });
 
-var adicionarSegredo = document.querySelector("#palavra-sorteada");
+var palavraCerta = document.querySelector("#palavra-certa");
 
-listaDePalavras = ["baleia","oraclo","paralelepipedo"];
-
-function sorteiaPalavra (){
-    var palavraEscolida = listaDePalavras[Math.floor(Math.random()*listaDePalavras.length)];
-    return palavraEscolida
-}
-function desenhaTracinhos() {
-    var palavraSorteada = sorteiaPalavra();
-    for (let i = 0; i < palavraSorteada.length; i++) {
-        tracinhos(i);
-    }
-}
+listaDePalavras = ["BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","JARACAMBEVA","ENFERRUJADINHO"];
 
 var palavraSorteada = sorteiaPalavra();
-var letrasCorretas = palavraSorteada.split("");
-var letrasIncorretas = [];
+var letrasCorretas;
+var letrasIncorretas;
+var erro;
 
-console.log(letrasCorretas);
-
-function adicionaJogo() {
-    var li = document.createElement('li');
-    palavraJogo = document.createTextNode(palavraSorteada);
-    li.appendChild(palavraJogo);
-    adicionarSegredo.appendChild(li);
+function adicionaLetra(pai,letra) {
+    var letra = document.createElement('div');
+    pai.appendChild(letra);
+    letra.setAttribute("class","valor");
+    return letra;
 }
-adicionaJogo()
-//console.log(listaDePalavras);
+function sorteiaPalavra (){
+    var palavra = listaDePalavras[Math.floor(Math.random()*listaDePalavras.length)];
+    return palavra;
+}
+function adicionaHtml() {
+    for (let i = 0; i < palavraSorteada.length; i++) {
+        adicionaLetra(palavraCerta, palavraSorteada);
+        letrasCorretas = palavraSorteada.split('');
+    }
+    return letrasCorretas;
+}
+sorteiaPalavra();
+adicionaHtml();
+console.log(letrasCorretas)
+
+function validaLetra() {
+    
+}
