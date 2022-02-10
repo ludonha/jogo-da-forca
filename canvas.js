@@ -27,12 +27,13 @@ function desenhaForca() {
     pincel.stroke()
 
 }
-//aciona ao clicar iniciar jogo
+//clicar iniciar jogo
 function desenhaInicio() {
     desenhaBase();
     desenhaForca();
 }
 desenhaInicio();
+//erro = 1
 function desenhaCorda() {
     pincel.fillStyle = 'rgb(233, 79, 18)';
     pincel.fillRect(343,150,5,70);
@@ -45,16 +46,19 @@ function desenhaCorda() {
     pincel.arc(345,241,17,0,2*3.14);
     pincel.fill();
 }
+//erro = 2
 function desenhaCabeca() {
     pincel.fillStyle = 'darkblue';
     pincel.beginPath();
     pincel.arc(345,245,25,0,2*3.14);
     pincel.fill();    
 }
+//erro = 3
 function desenhaTronco() {
     pincel.fillStyle = 'darkblue';
     pincel.fillRect(330,270,30,90);   
 }
+//erro = 4
 function desenhaBracoE() {
     pincel.lineWidth = 10.0;
     pincel.strokeStyle = 'darkblue';
@@ -63,6 +67,7 @@ function desenhaBracoE() {
     pincel.lineTo(305,320);
     pincel.stroke()  
 }
+//erro = 5
 function desenhaBracoD() {
     pincel.lineWidth = 10.0;
     pincel.strokeStyle = 'darkblue';
@@ -71,6 +76,7 @@ function desenhaBracoD() {
     pincel.lineTo(385,320);
     pincel.stroke()
 }
+//erro = 6
 function desenhaPernaE() {
     pincel.lineWidth = 10.0;
     pincel.strokeStyle = 'darkblue';
@@ -79,6 +85,7 @@ function desenhaPernaE() {
     pincel.lineTo(305,420);
     pincel.stroke()
 }
+//erro = 7 (fim do jogo)
 function desenhaPernaD() {
     pincel.lineWidth = 10.0;
     pincel.strokeStyle = 'darkblue';
@@ -94,3 +101,4 @@ function tracinhos(x) {
     pincel.fillStyle = 'black';
     pincel.fillRect(400+(50*x),5,35,5);
 }*/
+//pincel.fillText('Hello world', 10, 50);

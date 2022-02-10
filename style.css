@@ -1,6 +1,6 @@
-
-.titulo {
-  width: 30vw;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+html{
+  font-family: 'Inter', sans-serif;
 }
 .btn {
   border: 0;
@@ -18,7 +18,7 @@
   flex-direction: row;
   padding: 0.5em;
   margin-bottom: 2px;
-  width: 30%;
+  width: 20%;
   height: 25px;
 }
 #forca {
@@ -36,9 +36,11 @@
   position: absolute;
   background-color: lightgray;
 }
-.valor {
+#letra {
   border-bottom: 5px solid black;
   margin-right: 5px;
   width: 45px;
-  height: 70px;
+  height: 55px;
+  font-size: xxx-large;
+  text-align: center;
 }
