@@ -44,3 +44,13 @@ html{
   font-size: xxx-large;
   text-align: center;
 }
+#palavra-errada {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 100px;
+  left: 520px;
+  top: 520px;
+  position: absolute;
+  background-color: lightgray;
+}

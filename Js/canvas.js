@@ -32,7 +32,6 @@ function desenhaInicio() {
     desenhaBase();
     desenhaForca();
 }
-desenhaInicio();
 //erro = 1
 function desenhaCorda() {
     pincel.fillStyle = 'rgb(233, 79, 18)';
@@ -94,11 +93,21 @@ function desenhaPernaD() {
     pincel.lineTo(385,420);
     pincel.stroke()
 }
-
-/*pincel.fillStyle = 'lightblue';
-pincel.fillRect(0,0,1100,50);
-function tracinhos(x) {
+//função desenhaVitoria
+function desenhaVitoria() {
+    pincel.fillStyle = 'green';
+    pincel.fillRect(150,300,250,100);
+    
+    pincel.fillStyle = 'yellow';
+    pincel.font = '25px Inter';
+    pincel.fillText('Você Venceu, Parabéns!!!', 150, 360);
+}
+//função desenhaDerrota
+function desenhaDerrota() {
+    pincel.fillStyle = 'red';
+    pincel.fillRect(150,300,250,100);
+    
     pincel.fillStyle = 'black';
-    pincel.fillRect(400+(50*x),5,35,5);
-}*/
-//pincel.fillText('Hello world', 10, 50);
+    pincel.font = '28px Inter';
+    pincel.fillText(' Fim de jogo! :(', 180, 360);    
+}
