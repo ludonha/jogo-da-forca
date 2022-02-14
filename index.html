@@ -11,16 +11,16 @@
   <body>
     <div class="inicio">
       <h1 class="titulo">Jogo da Forca</h1>
-      <button class="btn" id="iniciar-jogo">INICIAR JOGO</button>
     </div>
     <div class="texto">
       <input class="text-input" type="text" id="input-nova-palavra" placeholder="Escreva uma nova palavra">
-      <button class="btn" id="nova-palavra">ADICIONAR PALAVRA</button> 
+      <button class="btn" id="nova-palavra">ADICIONAR PALAVRA</button>
+      <button class="btn" id="iniciar-jogo">INICIAR JOGO</button>
     </div>
     <div class="jogo">
       <canvas id="forca" width="400px" height="600px"></canvas>
       <div class="palavras" id="palavra-certa"></div>
-      <div class="palavras" id="palavra-errada"></div>
+      <div class="palavras" id="letra-errada">Você tem 7 tentativas: </div>
     </div>
     <div class="reiniciar">
       <button class="btn" id="reiniciar-jogo">REINICIAR</button>

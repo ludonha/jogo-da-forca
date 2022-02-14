@@ -1,4 +1,6 @@
-window.addEventListener('keyup', function (event) {
+window.addEventListener('keyup', tecla);
+
+function tecla (event) {
     var regex = /[a-z]/;
     var digitado = regex.test(event.key);
 
@@ -12,4 +14,22 @@ window.addEventListener('keyup', function (event) {
     
     validarLetra(letra);
     
-});
+};
+// função de conecção do jogo...
+function validarLetra(digito) {
+    letrasSeparada.includes(digito);
+    if (letrasSeparada.includes(digito)) {
+        letrasCorretas.push(digito);
+        indicePosicao.splice(0,14,);
+        validaPosicao(digito);
+        //console.log(indicePosicao)
+        desenhaLetraCorreta(digito);
+        console.log(letrasCorretas);//
+        vitoria(digito);
+    } else if (digito !== undefined && !letrasIncorretas.includes(digito)){
+        letrasIncorretas.push(digito);
+        console.log(letrasIncorretas);//
+        desenhaLetraIncorreta(digito);
+        desenhaJogo();
+    }
+};

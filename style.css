@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 html{
   font-family: 'Inter', sans-serif;
+  background-color: lightgray;
+}
+h1{
+  margin: 0;
 }
 .btn {
   border: 0;
@@ -32,9 +36,8 @@ html{
   width: 700px;
   height: 70px;
   left: 428px;
-  top: 744px;
+  top: 630px;
   position: absolute;
-  background-color: lightgray;
 }
 #letra {
   border-bottom: 5px solid black;
@@ -44,15 +47,14 @@ html{
   font-size: xxx-large;
   text-align: center;
 }
-#palavra-errada {
+#letra-errada {
   display: flex;
   flex-direction: row;
-  width: 500px;
+  width: 550px;
   height: 70px;
-  left: 520px;
-  top: 520px;
+  left: 530px;
+  top: 330px;
   position: absolute;
   font-size: xx-large;
   align-items: center;
-  background-color: lightgray;
 }

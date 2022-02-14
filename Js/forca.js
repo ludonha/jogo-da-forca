@@ -74,27 +74,13 @@ function desenhaLetraCorreta(digito) {
         var mostraLetra = mostra[posicaoLetra];
         mostraLetra.textContent = digito;
         console.log(mostraLetra);
-    }
-    
-};
-function validarLetra(digito) {
-    letrasSeparada.includes(digito);
-    if (letrasSeparada.includes(digito)) {
-        letrasCorretas.push(digito);
-            indicePosicao.splice(0,14,);
-                validaPosicao(digito);
-                    desenhaLetraCorreta(digito);
-                    console.log(letrasCorretas);//
-    } else if (digito !== undefined && !letrasIncorretas.includes(digito)){
-        letrasIncorretas.push(digito);
-        console.log(letrasIncorretas);//
-            desenhaLetraIncorreta(digito);
-                desenhaJogo();
+        
     }
 };
+
 //desenha letra incorreta
 function desenhaLetraIncorreta(digito) {
-    var palavraErrada = document.querySelector("#palavra-errada");
+    var palavraErrada = document.querySelector("#letra-errada");
     palavraErrada.textContent += digito;
 };
 //desenha forca
@@ -102,27 +88,48 @@ function desenhaJogo() {
     for (let i = 0; i < letrasIncorretas.length; i++) {
         const erro = 0 + i;
         console.log(erro)//
-        if (erro>=1) {
+        if (erro>=0) {
             desenhaCorda();
         };
-        if (erro>=2) {
+        if (erro>=1) {
             desenhaCabeca();
         };
-        if (erro>=3) {
+        if (erro>=2) {
             desenhaTronco();
         };
-        if (erro>=4) {
+        if (erro>=3) {
             desenhaBracoE();
         };
-        if (erro>=5) {
+        if (erro>=4) {
             desenhaBracoD();
         };
-        if (erro>=6) {
+        if (erro>=5) {
             desenhaPernaE();
         };
-        if (erro>=7) {
+        if (erro>=6) {
             desenhaPernaD();
             desenhaDerrota();
+
+            window.removeEventListener('keyup', tecla);
         };
     }
 };
+// verifica vencedor
+function vitoria(digito) {
+    //var acertou = 0;
+    for (let i = 0; i < letrasSeparada.length; i++) {
+        var acertou = '';
+        var ls = letrasSeparada[i]
+        
+        if(digito==ls){
+            acertou++
+            
+        }
+        if (acertou == letrasSeparada.length) {
+            console.log("fim")
+        }
+
+        console.log(acertou)
+    }
+    //console.log(acertou)
+}
