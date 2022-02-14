@@ -48,9 +48,11 @@ html{
   display: flex;
   flex-direction: row;
   width: 500px;
-  height: 100px;
+  height: 70px;
   left: 520px;
   top: 520px;
   position: absolute;
+  font-size: xx-large;
+  align-items: center;
   background-color: lightgray;
 }

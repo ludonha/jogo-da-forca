@@ -33,8 +33,6 @@ var letrasCorretas = [];
 var indicePosicao = [];
 var letrasIncorretas = [];
 
-var erro = 0;
-
 function sorteiaPalavra (){
     var palavra = listaDePalavras[Math.floor(Math.random()*listaDePalavras.length)];
     return palavra;
@@ -56,7 +54,7 @@ function adicionaCampo() {
 desenhaInicio();
 sorteiaPalavra();
 adicionaCampo();
-console.log(letrasSeparada);
+console.log(letrasSeparada);//
 
 //  ===  funções escuta keypress
 //verifica posição letra
@@ -83,17 +81,48 @@ function validarLetra(digito) {
     letrasSeparada.includes(digito);
     if (letrasSeparada.includes(digito)) {
         letrasCorretas.push(digito);
-        indicePosicao.splice(0,14,);
-        validaPosicao(digito);
-        desenhaLetraCorreta(digito);
-        console.log(letrasCorretas);
-    } else if (digito !== undefined){
+            indicePosicao.splice(0,14,);
+                validaPosicao(digito);
+                    desenhaLetraCorreta(digito);
+                    console.log(letrasCorretas);//
+    } else if (digito !== undefined && !letrasIncorretas.includes(digito)){
         letrasIncorretas.push(digito);
-        console.log(letrasIncorretas);
+        console.log(letrasIncorretas);//
+            desenhaLetraIncorreta(digito);
+                desenhaJogo();
     }
 };
-
-//desenha letra incorreta e desenha forca
-teste = ["A","B","D"];
-var palavraErrada = document.querySelector("#palavra-errada");
-palavraErrada.textContent += teste;
+//desenha letra incorreta
+function desenhaLetraIncorreta(digito) {
+    var palavraErrada = document.querySelector("#palavra-errada");
+    palavraErrada.textContent += digito;
+};
+//desenha forca
+function desenhaJogo() {
+    for (let i = 0; i < letrasIncorretas.length; i++) {
+        const erro = 0 + i;
+        console.log(erro)//
+        if (erro>=1) {
+            desenhaCorda();
+        };
+        if (erro>=2) {
+            desenhaCabeca();
+        };
+        if (erro>=3) {
+            desenhaTronco();
+        };
+        if (erro>=4) {
+            desenhaBracoE();
+        };
+        if (erro>=5) {
+            desenhaBracoD();
+        };
+        if (erro>=6) {
+            desenhaPernaE();
+        };
+        if (erro>=7) {
+            desenhaPernaD();
+            desenhaDerrota();
+        };
+    }
+};
