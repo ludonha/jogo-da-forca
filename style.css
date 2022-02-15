@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 html{
   font-family: 'Inter', sans-serif;
-  background-color: lightgray;
 }
 h1{
   margin: 0;
+  margin: 20px 0px 10px 150px;
+}
+body{
+  background-color: lightgray;
+  font-size: 25px;
+  align-items: center;
+  
 }
 .btn {
+  display: flex;
   border: 0;
   color: white;
   font-weight: bold;
@@ -14,6 +22,15 @@ h1{
   padding: 10px;
   margin: 5px;
   border-radius: 0.5em;
+}
+#reiniciar-jogo{
+  position:absolute;
+  left: 150px;
+}
+.texto {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 0px 144px;
 }
 .text-input {
   border-radius: 0.5em;
@@ -44,7 +61,7 @@ h1{
   margin-right: 5px;
   width: 45px;
   height: 55px;
-  font-size: xxx-large;
+  font-size: 45px;
   text-align: center;
 }
 #letra-errada {
@@ -55,6 +72,4 @@ h1{
   left: 530px;
   top: 330px;
   position: absolute;
-  font-size: xx-large;
-  align-items: center;
 }

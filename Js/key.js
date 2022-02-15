@@ -18,14 +18,17 @@ function tecla (event) {
 function validarLetra(digito) {
     letrasSeparada.includes(digito);
     if (letrasSeparada.includes(digito)) {
-        letrasCorretas.push(digito);
-        indicePosicao.splice(0,14,);
-        validaPosicao(digito);
-        //console.log(indicePosicao)
-        desenhaLetraCorreta(digito);
-        console.log(letraAcertada);//
-        
-        vitoria(digito);
+        if (!letrasCorretas.includes(digito)) {
+            letrasCorretas.push(digito);
+            
+            indicePosicao.splice(0,14,);
+            validaPosicao(digito);
+            //console.log(indicePosicao)
+            desenhaLetraCorreta(digito);
+            contaAcertos();
+            console.log(letraAcertada);//
+            vitoria();           
+        }
         
         
     } else if (digito !== undefined && !letrasIncorretas.includes(digito)){

@@ -35,7 +35,7 @@ var palavraSorteada = sorteiaPalavra();
 var letrasCorretas = [];
 var indicePosicao = [];
 var letrasIncorretas = [];
-var letraAcertada = 1;
+var letraAcertada = 0;
 
 function sorteiaPalavra (){
     var palavra = listaDePalavras[Math.floor(Math.random()*listaDePalavras.length)];
@@ -111,20 +111,19 @@ function derrota() {
         };
     }
 };
+//conta Acertos
+function contaAcertos() {
+    for (let i = 0; i < indicePosicao.length; i++){
+        letraAcertada++
+    }
+    return letraAcertada
+}
 // verifica vencedor
-function vitoria(digito) { 
+function vitoria() { 
     if (letraAcertada >= palavraSorteada.length) {
         desenhaVitoria();
 
         window.removeEventListener('keyup', tecla);
     }
-    
-    for (let i = 0; i < indicePosicao.length; i++) {
-        if (digito) {
-            letraAcertada++
-        }   
-    }
-    
      
-    
 };
