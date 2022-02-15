@@ -1,5 +1,4 @@
-window.addEventListener('keyup', tecla);
-
+//função escuta teclado
 function tecla (event) {
     var regex = /[a-z]/;
     var digitado = regex.test(event.key);
@@ -24,12 +23,15 @@ function validarLetra(digito) {
         validaPosicao(digito);
         //console.log(indicePosicao)
         desenhaLetraCorreta(digito);
-        console.log(letrasCorretas);//
+        console.log(letraAcertada);//
+        
         vitoria(digito);
+        
+        
     } else if (digito !== undefined && !letrasIncorretas.includes(digito)){
         letrasIncorretas.push(digito);
         console.log(letrasIncorretas);//
         desenhaLetraIncorreta(digito);
-        desenhaJogo();
+        derrota();
     }
 };

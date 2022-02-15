@@ -1,9 +1,12 @@
 var iniciar = document.getElementById("iniciar-jogo");
 
-iniciar.addEventListener('click', function() {
-    //sorteiaPalavra();
-    //adicionaCampo();
-
+iniciar.addEventListener('click', function(event) {
+    event.preventDefault;
+    desenhaInicio();
+    sorteiaPalavra();
+    adicionaCampo();
+    console.log(letrasSeparada);//
+    window.addEventListener('keyup', tecla);
 });
 
 var adicionarNovaPalavra = document.getElementById("nova-palavra");
@@ -25,36 +28,30 @@ reiniciar.addEventListener("click", function () {
 var palavraCerta = document.querySelector("#palavra-certa");
 
 
-listaDePalavras = ["BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","JARACAMBEVA","ENFERRUJADINHO"];
+listaDePalavras = ["BALEIA","CACHORRO","OVELHA","VACA","BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","JARACAMBEVA","ENFERRUJADINHO"];
 
 var palavraSorteada = sorteiaPalavra();
 
 var letrasCorretas = [];
 var indicePosicao = [];
 var letrasIncorretas = [];
+var letraAcertada = 1;
 
 function sorteiaPalavra (){
     var palavra = listaDePalavras[Math.floor(Math.random()*listaDePalavras.length)];
     return palavra;
-}
+};
 function criarCampo(pai,letra) {
     var letra = document.createElement('div');
     pai.appendChild(letra);
     letra.setAttribute("id","letra");
-}
+};
 function adicionaCampo() {
     for (let i = 0; i < palavraSorteada.length; i++) {
         letrasSeparada = palavraSorteada.split('');
         criarCampo(palavraCerta, letrasSeparada);
-    }
-    return letrasSeparada
-}
-
-//botão iniciar
-desenhaInicio();
-sorteiaPalavra();
-adicionaCampo();
-console.log(letrasSeparada);//
+    };
+};
 
 //  ===  funções escuta keypress
 //verifica posição letra
@@ -84,10 +81,10 @@ function desenhaLetraIncorreta(digito) {
     palavraErrada.textContent += digito;
 };
 //desenha forca
-function desenhaJogo() {
+function derrota() {
     for (let i = 0; i < letrasIncorretas.length; i++) {
         const erro = 0 + i;
-        console.log(erro)//
+        //console.log(erro)//
         if (erro>=0) {
             desenhaCorda();
         };
@@ -115,21 +112,19 @@ function desenhaJogo() {
     }
 };
 // verifica vencedor
-function vitoria(digito) {
-    //var acertou = 0;
-    for (let i = 0; i < letrasSeparada.length; i++) {
-        var acertou = '';
-        var ls = letrasSeparada[i]
-        
-        if(digito==ls){
-            acertou++
-            
-        }
-        if (acertou == letrasSeparada.length) {
-            console.log("fim")
-        }
+function vitoria(digito) { 
+    if (letraAcertada >= palavraSorteada.length) {
+        desenhaVitoria();
 
-        console.log(acertou)
+        window.removeEventListener('keyup', tecla);
     }
-    //console.log(acertou)
-}
+    
+    for (let i = 0; i < indicePosicao.length; i++) {
+        if (digito) {
+            letraAcertada++
+        }   
+    }
+    
+     
+    
+};

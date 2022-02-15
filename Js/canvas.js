@@ -99,7 +99,7 @@ function desenhaVitoria() {
     pincel.fillRect(150,300,250,100);
     
     pincel.fillStyle = 'yellow';
-    pincel.font = '25px Inter';
+    pincel.font = 'bold 20px Inter';
     pincel.fillText('Você Venceu, Parabéns!!!', 150, 360);
 }
 //função desenhaDerrota
@@ -108,6 +108,6 @@ function desenhaDerrota() {
     pincel.fillRect(150,300,250,100);
     
     pincel.fillStyle = 'black';
-    pincel.font = '28px Inter';
+    pincel.font = 'bold 28px Inter';
     pincel.fillText(' Fim de jogo! :(', 180, 360);    
 }
