@@ -3,29 +3,27 @@
 html{
   font-family: 'Inter', sans-serif;
 }
-h1{
-  margin: 0;
-  margin: 20px 0px 10px 150px;
-}
 body{
   background-color: lightgray;
   font-size: 25px;
   align-items: center;
   
 }
+h1 h6 {
+  margin: 0;
+}
+.titulo{
+  margin: 20px 0px 10px 150px;
+}
 .btn {
   display: flex;
   border: 0;
   color: white;
   font-weight: bold;
-  background-color: blue;
+  background-color: rgb(10, 90, 250);
   padding: 10px;
   margin: 5px;
   border-radius: 0.5em;
-}
-#reiniciar-jogo{
-  position:absolute;
-  left: 150px;
 }
 .texto {
   display: flex;
@@ -39,13 +37,22 @@ body{
   flex-direction: row;
   padding: 0.5em;
   margin-bottom: 2px;
-  width: 20%;
+  width: 200px;
   height: 25px;
 }
 #forca {
   display: flex;
   flex-direction: row;
   padding-left: 20px;
+}
+#letra-errada {
+  display: flex;
+  flex-direction: row;
+  width: 550px;
+  height: 70px;
+  left: 530px;
+  top: 330px;
+  position: absolute;
 }
 #palavra-certa {
   display: flex;
@@ -64,12 +71,25 @@ body{
   font-size: 45px;
   text-align: center;
 }
-#letra-errada {
+.reiniciar {
   display: flex;
-  flex-direction: row;
-  width: 550px;
-  height: 70px;
-  left: 530px;
-  top: 330px;
-  position: absolute;
+  width: auto;
+  position:relative;
+  left: 150px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.rodape {
+  display: flex;
+  font-size: 15px;
+  margin: 10px;
+}
+.footer img {
+  display: flex;
+  height: 20px;
+  margin: 10px;
 }
