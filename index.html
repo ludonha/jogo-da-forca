@@ -9,22 +9,26 @@
     <link rel="shortcut icon" type="imagex/png" href="img/3792005-gallows-halloween-horror-tree_109011.ico">
   </head>
   <body>
-    <div class="inicio">
-      <h1 class="titulo">Jogo da Forca</h1>
-    </div>
-    <div class="texto">
-      <input class="text-input" type="text" id="input-nova-palavra" placeholder="Escreva uma nova palavra">
-      <button class="btn" id="nova-palavra">ADICIONAR PALAVRA</button>
-      <button class="btn" id="iniciar-jogo">INICIAR JOGO</button>
-    </div>
-    <div class="jogo">
-      <canvas id="forca" width="400px" height="600px"></canvas>
-      <div class="palavras" id="palavra-certa"></div>
-      <div class="palavras" id="letra-errada">Você tem 7 tentativas: </div>
-    </div>
-    <div class="reiniciar">
-      <button class="btn" id="reiniciar-jogo">REINICIAR</button>
-    </div>
+    <header>
+      <div class="inicio">
+        <h1 class="titulo">Jogo da Forca</h1>
+      </div>
+    </header>
+    <main>
+      <div class="texto">
+        <input class="text-input" type="text" id="input-nova-palavra" placeholder="Escreva uma nova palavra">
+        <button class="btn" id="nova-palavra">ADICIONAR PALAVRA</button>
+        <button class="btn" id="iniciar-jogo">INICIAR JOGO</button>
+      </div>
+      <div class="jogo">
+        <canvas id="forca" width="400px" height="600px"></canvas>
+        <div class="palavras" id="palavra-certa"></div>
+        <div class="palavras" id="letra-errada">Você tem 7 tentativas: </div>
+      </div>
+      <div class="reiniciar">
+        <button class="btn" id="reiniciar-jogo">REINICIAR</button>
+      </div>
+    </main>
     <footer>
       <div class="footer">
         <p class="rodape">Oracle Next Education + Allura Challenge by Lucas Donha - 2022</p>
