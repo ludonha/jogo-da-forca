@@ -1,9 +1,9 @@
 var desenho = document.querySelector ('#forca');
 var pincel = desenho.getContext('2d');
-
+/*
 pincel.fillStyle = 'lightgrey';
 pincel.fillRect(0,0,400,600);
-
+*/
 function desenhaBase() {
     pincel.fillStyle = 'rgb(212, 139, 56)';
     pincel.fillRect(0,550,350,15);
