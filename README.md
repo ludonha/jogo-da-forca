@@ -8,4 +8,4 @@
 
 <li>Agradeço ao todos da Alura e a comunidade do Discord.</li>
 
-<li><a href="https://ludonha.github.io/jogo-da-forca/">Pagina do Progeto</li>
+<li><a href="https://ludonha.github.io/jogo-da-forca/">Pagina do Projeto</li>
