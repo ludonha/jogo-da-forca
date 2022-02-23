@@ -2,10 +2,11 @@
 
 html{
   font-family: 'Inter', sans-serif;
-  color: rgba(10, 56, 113, 1);
+  
 }
 body{
   background-color: #F3F5FC;
+  color: rgba(10, 56, 113, 1);
   font-size: 25px;
   align-items: center;
   
@@ -81,7 +82,7 @@ body{
   align-items: center;
   position: relative;
 }
-.rodape {
+.texto-rodape{
   display: flex;
   font-size: 13px;
   margin: 10px;

@@ -1,10 +1,12 @@
 var iniciar = document.getElementById("iniciar-jogo");
 
-iniciar.addEventListener('click', function(event) {
-    event.preventDefault;
+iniciar.addEventListener('click', function() {
+    
     desenhaInicio();
-    sorteiaPalavra();
+    
+    palavraCerta.innerHTML = "";
     adicionaCampo();
+    
     console.log(letrasSeparada);//
     window.addEventListener('keyup', tecla);
 });
@@ -12,11 +14,24 @@ iniciar.addEventListener('click', function(event) {
 var adicionarNovaPalavra = document.getElementById("nova-palavra");
 
 adicionarNovaPalavra.addEventListener("click", function () {
-    novoTexto = document.querySelector("#input-nova-palavra");
-    listaDePalavras.push(novoTexto.value.toUpperCase());
-    //Adicinar regex para filtar caracteres especiais
-    alert("Sua palavra foi Adicionada com sucesso!")
-    novoTexto.value = "";
+    novaPalavra = document.querySelector("#input-nova-palavra");
+    
+    var regex = /[0-9áâãàäéèêëíìîïóòôõöúùûü@#$%&*-\s]+/;
+    var regexdois = /\w{11}/;
+    var palavraTeste = regex.test(novaPalavra.value);
+    var palavraTesteDois = regexdois.test(novaPalavra.value);
+    
+    if (palavraTeste) {        
+        alert("Digite apenas letras sem acento, e sem espaço entre elas.");
+    }else if (palavraTesteDois){
+        alert("Digite palavas no máximo até 10 letras.");
+    }else{
+        console.log('dentro')
+        listaDePalavras.push(novaPalavra.value.toUpperCase());
+        alert("Sua palavra foi Adicionada com sucesso!");
+    }
+    
+    novaPalavra.value = "";
 });
 
 var reiniciar = document.getElementById("reiniciar-jogo");
@@ -28,7 +43,7 @@ reiniciar.addEventListener("click", function () {
 var palavraCerta = document.querySelector("#palavra-certa");
 
 
-listaDePalavras = ["BALEIA","CACHORRO","OVELHA","VACA","BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","JARACAMBEVA","ENFERRUJADINHO"];
+listaDePalavras = ["BALEIA","CACHORRO","OVELHA","VACA","BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","PEIXE","JACARE"];
 
 var palavraSorteada = sorteiaPalavra();
 
@@ -47,6 +62,7 @@ function criarCampo(pai,letra) {
     letra.setAttribute("id","letra");
 };
 function adicionaCampo() {
+    sorteiaPalavra();
     for (let i = 0; i < palavraSorteada.length; i++) {
         letrasSeparada = palavraSorteada.split('');
         criarCampo(palavraCerta, letrasSeparada);
@@ -86,27 +102,27 @@ function derrota() {
         const erro = 0 + i;
         //console.log(erro)//
         if (erro>=0) {
-            desenhaCorda();
+            desenhaCorda(y);
         };
         if (erro>=1) {
-            desenhaCabeca();
+            desenhaCabeca(y);
         };
         if (erro>=2) {
-            desenhaTronco();
+            desenhaTronco(y);
         };
         if (erro>=3) {
-            desenhaBracoE();
+            desenhaBracoE(y);
         };
         if (erro>=4) {
-            desenhaBracoD();
+            desenhaBracoD(y);
         };
         if (erro>=5) {
-            desenhaPernaE();
+            desenhaPernaE(y);
         };
         if (erro>=6) {
-            desenhaPernaD();
-            desenhaDerrota();
-
+            desenhaPernaD(y);
+            desenhaDerrota(y);
+            //A palavra era:
             window.removeEventListener('keyup', tecla);
         };
     }
@@ -121,7 +137,7 @@ function contaAcertos() {
 // verifica vencedor
 function vitoria() { 
     if (letraAcertada >= palavraSorteada.length) {
-        desenhaVitoria();
+        desenhaVitoria(y);
 
         window.removeEventListener('keyup', tecla);
     }
