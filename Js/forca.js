@@ -15,16 +15,16 @@ var adicionarNovaPalavra = document.getElementById("nova-palavra");
 
 adicionarNovaPalavra.addEventListener("click", function () {
     novaPalavra = document.querySelector("#input-nova-palavra");
-    
-    var regex = /[0-9áâãàäéèêëíìîïóòôõöúùûü@#$%&*-\s]+/;
+
+    var regex = /[0-9áâãàäéèêëíìîïóòôõöúùûüç'"!@#$%&*-?_\s]+/;
     var regexdois = /\w{11}/;
     var palavraTeste = regex.test(novaPalavra.value);
     var palavraTesteDois = regexdois.test(novaPalavra.value);
     
     if (palavraTeste) {        
-        alert("Digite apenas letras sem acento, e sem espaço entre elas.");
-    }else if (palavraTesteDois){
-        alert("Digite palavas no máximo até 10 letras.");
+        alert("Digite apenas letras sem caracteres especiais, e sem espaço entre elas.");
+    }else if (palavraTesteDois | novaPalavra.value == ""){
+        alert("Digite uma palava que tenha no máximo até 10 letras.");
     }else{
         console.log('dentro')
         listaDePalavras.push(novaPalavra.value.toUpperCase());
