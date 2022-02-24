@@ -4,7 +4,9 @@ var pincel = desenho.getContext('2d');
 pincel.fillStyle = 'lightgrey';
 pincel.fillRect(0,0,400,600);
 */
+
 var y = 125;
+
 function desenhaBase(y) {
     pincel.fillStyle = 'rgb(212, 139, 56)';
     pincel.fillRect(0,550-y,350,15);
@@ -100,8 +102,8 @@ function desenhaVitoria(y) {
     pincel.fillRect(150,300-y,250,100);
     
     pincel.fillStyle = 'yellow';
-    pincel.font = 'bold 20px Inter';
-    pincel.fillText('Você Venceu, Parabéns!!!', 150, 360-y);
+    pincel.font = 'bold 20px Overpass';
+    pincel.fillText('Você Venceu, Parabéns!!!', 155, 360-y);
 }
 //função desenhaDerrota
 function desenhaDerrota(y) {
@@ -109,7 +111,7 @@ function desenhaDerrota(y) {
     pincel.fillRect(150,300-y,250,100);
     
     pincel.fillStyle = 'black';
-    pincel.font = 'bold 28px Inter';
-    pincel.fillText(' Fim de jogo! :(', 180, 340-y);
-    pincel.fillText('Era: '+ palavraSorteada, 180, 375-y);
+    pincel.font = 'bold 25px Overpass';
+    pincel.fillText('Fim de jogo!', 170, 340-y);
+    pincel.fillText('Era: '+ palavraSorteada, 170, 375-y);
 }
