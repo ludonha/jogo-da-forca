@@ -122,7 +122,7 @@ function derrota() {
         if (erro>=6) {
             desenhaPernaD(y);
             desenhaDerrota(y);
-            //A palavra era:
+             
             window.removeEventListener('keyup', tecla);
         };
     }

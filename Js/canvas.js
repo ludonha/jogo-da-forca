@@ -110,5 +110,6 @@ function desenhaDerrota(y) {
     
     pincel.fillStyle = 'black';
     pincel.font = 'bold 28px Inter';
-    pincel.fillText(' Fim de jogo! :(', 180, 360-y);    
+    pincel.fillText(' Fim de jogo! :(', 180, 340-y);
+    pincel.fillText('Era: '+ palavraSorteada, 180, 375-y);
 }
