@@ -9,6 +9,8 @@ iniciar.addEventListener('click', function() {
     
     console.log(letrasSeparada);//
     window.addEventListener('keyup', tecla);
+    document.getElementsByClassName("reiniciar")[0].style.display = "block";
+    document.getElementsByClassName("entradas")[0].style.display = "none";
 });
 
 var adicionarNovaPalavra = document.getElementById("nova-palavra");
@@ -26,7 +28,6 @@ adicionarNovaPalavra.addEventListener("click", function () {
     }else if (palavraTesteDois | novaPalavra.value == ""){
         alert("Digite uma palava que tenha no máximo até 10 letras.");
     }else{
-        console.log('dentro')
         listaDePalavras.push(novaPalavra.value.toUpperCase());
         alert("Sua palavra foi Adicionada com sucesso!");
     }
@@ -38,12 +39,14 @@ var reiniciar = document.getElementById("reiniciar-jogo");
 
 reiniciar.addEventListener("click", function () {
     location.reload();
+    
 })
 
 var palavraCerta = document.querySelector("#palavra-certa");
 
-
 listaDePalavras = ["BALEIA","CACHORRO","OVELHA","VACA","BODE","BALUGA","GOLFINHO","MARIPOSA","CAMUNDONGO","PEIXE","JACARE"];
+//localStorage.setItem(listaDePalavras, JSON.stringify(listaDePalavras))
+//localStorage.getItem(listaDePalavras)
 
 var palavraSorteada = sorteiaPalavra();
 
@@ -92,9 +95,10 @@ function desenhaLetraCorreta(digito) {
 };
 
 //desenha letra incorreta
-function desenhaLetraIncorreta(digito) {
+function desenhaLetraIncorreta() {
     var palavraErrada = document.querySelector("#letra-errada");
-    palavraErrada.textContent += digito;
+    palavraErrada.textContent = "Você tem " +(7-letrasIncorretas.length)+ " tentativas: ";
+    palavraErrada.textContent += letrasIncorretas.join(' ');
 };
 //desenha forca
 function derrota() {

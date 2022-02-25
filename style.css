@@ -74,6 +74,7 @@ body{
 }
 
 .reiniciar {
+  display: none;
   text-align: center;
 }
 .footer {
