@@ -8,7 +8,7 @@ iniciar.addEventListener('click', function() {
     adicionaCampo();
     
     console.log(letrasSeparada);//
-    window.addEventListener('keyup', tecla);
+    window.addEventListener('keyup', letraTeclada);
     document.getElementsByClassName("reiniciar")[0].style.display = "block";
     document.getElementsByClassName("entradas")[0].style.display = "none";
 });
@@ -80,7 +80,7 @@ function validaPosicao(digito) {
         indicePosicao.push(posicao);
         posicao = letrasSeparada.indexOf(digito, posicao + 1);
     }
-    return indicePosicao
+    return indicePosicao;
 };
 //desenha letra correta
 function desenhaLetraCorreta(digito) {
@@ -103,8 +103,7 @@ function desenhaLetraIncorreta() {
 //desenha forca
 function derrota() {
     for (let i = 0; i < letrasIncorretas.length; i++) {
-        const erro = 0 + i;
-        //console.log(erro)//
+        const erro = i;
         if (erro>=0) {
             desenhaCorda(y);
         };
@@ -127,7 +126,7 @@ function derrota() {
             desenhaPernaD(y);
             desenhaDerrota(y);
              
-            window.removeEventListener('keyup', tecla);
+            window.removeEventListener('keyup', letraTeclada);
         };
     }
 };
@@ -136,14 +135,14 @@ function contaAcertos() {
     for (let i = 0; i < indicePosicao.length; i++){
         letraAcertada++
     }
-    return letraAcertada
+    return letraAcertada;
 }
 // verifica vencedor
 function vitoria() { 
     if (letraAcertada >= palavraSorteada.length) {
         desenhaVitoria(y);
 
-        window.removeEventListener('keyup', tecla);
+        window.removeEventListener('keyup', letraTeclada);
     }
      
 };

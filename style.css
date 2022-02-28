@@ -25,7 +25,7 @@ body{
   border-radius: 0.5em;
   border: 1px solid #2F5556;
   padding: 0.5em;
-  margin-bottom: 2px;
+  margin: 5px;
   width: 15%;
   height: 25px;
 }
@@ -34,11 +34,11 @@ body{
   color: #FFF5EE;
   font-weight: bold;
   background-color: #2F5556;
-  padding: 10px;
+  padding: 0.5em;
   margin: 5px;
   border-radius: 0.5em;
   width: 156px;
-  height: 36px;
+  height: 40px;
 }
 .btn:hover {
   background: #2F5570;

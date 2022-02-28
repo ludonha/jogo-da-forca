@@ -1,5 +1,5 @@
 //função escuta teclado
-function tecla (event) {
+function letraTeclada (event) {
     var regex = /[a-z]/;
     var digitado = regex.test(event.key);
 
